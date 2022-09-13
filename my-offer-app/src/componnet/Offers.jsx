@@ -1,0 +1,67 @@
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import Search from './Search';
+import Offer from './offer';
+import { OfferContext } from '../context/OfferContext';
+import SearchWithHook from './SearchWithHook';
+
+export default function Offers() {
+
+
+const [reset,setReset]=useState([])
+
+    const [data,setData]=useState(null)
+
+
+    useEffect(()=>{
+        async function fetchOffer(){
+           axios.get("https://globaljetluxembourg.recruitee.com/api/offers").then((res)=>{
+                 console.log(res);
+                setData(res.data.offers)
+                setReset(res.data.offers)
+            })
+        }fetchOffer()
+    },[]);
+console.log('data',data);
+
+
+
+
+if (!data) return null
+ 
+  
+
+  return (
+    <OfferContext.Provider value={[data,setData]}>
+     <div className='grid grid-cols-2 gap-4 p-4'>
+     <ul>
+      <h2 className='font-semibold text-xl'>JOBS</h2>
+      {
+        data.map((elem,i)=>{
+          return(
+            <li key={i}>
+              <Offer item={elem}/>
+            </li>
+          )
+        })
+      }
+
+{data.length === 0 && <button className='bg-red-500 px-3 py-2 table mx-auto' onClick={()=>setData(reset)}>Reset</button>}
+     </ul>
+     
+  
+    <Search/>
+
+      {/*<SearchWithHook/>*/}
+     
+
+
+        
+   
+
+    </div>
+    </OfferContext.Provider>
+    )
+  
+  
+}

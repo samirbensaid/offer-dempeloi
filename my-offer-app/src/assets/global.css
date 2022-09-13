@@ -1,0 +1,10 @@
+i{
+    @apply text-orange-300
+}
+h2{
+    @apply  text-center text-orange-300 italic py-4
+}
+
+#outlined-basic{
+    @apply text-yellow-50 border-[#9c6939] py-4 w-96
+}
