@@ -33,7 +33,7 @@ if (!data) return null
 
   return (
     <OfferContext.Provider value={[data,setData]}>
-     <div className='grid grid-cols-2 gap-4 p-4'>
+     <div className='lg:grid lg:grid-cols-2 lg:gap-4 p-4 sm:grid sm:grid-cols-1'>
      <ul>
       <h2 className='font-semibold text-xl'>JOBS</h2>
       {
@@ -50,9 +50,9 @@ if (!data) return null
      </ul>
      
   
-    <Search/>
+    {/*<Search/>*/}
 
-      {/*<SearchWithHook/>*/}
+      <SearchWithHook/>
      
 
 

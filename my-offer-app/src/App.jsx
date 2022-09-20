@@ -1,13 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+
 import Offers from './componnet/Offers'
 import './assets/app.css'
+import Modal from './modal/Modal'
+
 
 function App() {
 
 
   return (
     <div>
+     {/*<Modal/>*/}
  <Offers/>
     </div>
   )

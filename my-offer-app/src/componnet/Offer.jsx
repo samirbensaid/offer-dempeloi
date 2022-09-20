@@ -5,7 +5,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
+import Modal from '../modal/Modal';
 
 export default function Offer(props) {
 
@@ -40,25 +40,27 @@ export default function Offer(props) {
       </div>
       <button onClick={handleOpen} className='text-orange-300 py-2'><i className="fa-sharp fa-solid fa-circle-arrow-right "></i>  MORE DETAILS</button>
 
-      <Modal
+      {/*<Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-      
+
       >
         <Box sx={style}>
           <Typography id="modal-modal-title" variant="h6" component="h2">
             {props.item.title}
-            
+
           </Typography>
           <p>{props.item.city + " " + "|" + " " + props.item.employment_type_code}</p>
           <Typography id="modal-modal-description" sx={{ mt: 2 }}>
             {props.item.translations.en.description}
           </Typography>
         </Box>
-      </Modal>
+  </Modal>*/}
 
+
+<Modal open={open} setOpen={setOpen} item={props.item}/>
 
     </div>
   )
