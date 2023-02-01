@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Search from './Search';
-import Offer from './offer';
+import Offer from './Offer';
 import { OfferContext } from '../context/OfferContext';
 import SearchWithHook from './SearchWithHook';
 
