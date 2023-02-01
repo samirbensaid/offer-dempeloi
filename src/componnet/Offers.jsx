@@ -4,6 +4,7 @@ import Search from './Search';
 import Offer from './offer';
 import { OfferContext } from '../context/OfferContext';
 import SearchWithHook from './SearchWithHook';
+import { Alert, Box } from '@mui/material';
 
 export default function Offers() {
 
@@ -46,7 +47,10 @@ if (!data) return null
         })
       }
 
-{data.length === 0 && <button className='bg-red-500 px-3 py-2 table mx-auto' onClick={()=>setData(reset)}>Reset</button>}
+{data.length === 0 && <Box>
+  <Alert severity="info">No Results — check it out!</Alert>
+ <button className='bg-red-500 px-3 py-2 table mx-auto' onClick={()=>setData(reset)}>Reset</button>
+ </Box>}
      </ul>
      
   
